@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Adam's Magic Mirror Knockoff</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+</head>
+
+<body>
+    <div class="top right">
+        <!-- <div class="windsun small dimmed"></div> I dont care for this -->
+        <div class="temp"></div>
+        <div class="forecast small dimmed"></div>
+    </div>
+
+    <!-- date+time -->
+    <div class="top left">
+        <div class="date small dimmed"></div>
+        <div class="time" id="time"></div>
+        <div class="calendar xxsmall"></div> <!-- todo show calendar items -->
+    </div>
+
+    <div class="center-ver center-hor">
+        <img id="xkcd-img" >
+        <img id="map" class="map"
+             src="https://maps.googleapis.com/maps/api/staticmap?center=45.273082599999995,-75.849912&amp;zoom=13&amp;format=png&amp;sensor=false&amp;scale=2&amp;size=1422x1200&amp;maptype=roadmap&amp;style=visibility:on|weight:1|invert_lightness:true|saturation:-100|lightness:1">
+        <div id="spirit" class="image-container">
+            <img id="spirit-img" class="map">
+            <div class="img-caption light"></div>
+        </div>
+    </div>
+
+    <div class="lower-third center-hor">
+        <div class="compliment light"></div>
+    </div>
+
+    <div class="bottom center-hor">
+        <div class="news medium-small"></div>
+    </div>
+
+    <div class="debug-log bottom">
+        <div id="dbg-log" class="xxsmall"></div>
+    </div>
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/annyang.min.js"></script>
+
+    <script src="js/config.js"></script>
+    <script src="js/logger.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/geolocate.js"></script>
+    <script src="js/rss.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/onoff.js"></script>
+    <script src="js/mirrorspirit.js"></script>
+    <script src="js/smalltalk.js"></script>
+    <script src="js/xkcd.js"></script>
+    <script src="js/voicecontrol.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
