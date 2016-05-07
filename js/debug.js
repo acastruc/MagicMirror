@@ -45,7 +45,7 @@
                     MagicMirror.onoff.toggle();
                 } else if (key === 120) { //X
                     MagicMirror.logger.info('X key detected - toggling xkcd');
-                    MagicMirror.xkcd.togglme();
+                    MagicMirror.xkcd.toggle();
                 }
 
             });

@@ -30,13 +30,13 @@
 
         toDebug: function(s, type) {
             type = type || 'info';
-            lines.push(s.toString());
+            lines.push({text: s.toString(), type: type});
             if(lines.length > MAX_LINES) {
                 lines.shift();
             }
-            var msg;
+            var msg = '';
             for(var i=0; i<lines.length; i++) {
-                msg += '<p class="' + type +'">' + lines[i] + '</p>';
+                msg += '<p class="' + lines[i].type +'">' + lines[i].text + '</p>';
             }
             $('#dbg-log').html(msg);
         }

@@ -15,15 +15,15 @@
         MagicMirror.mirrorspirit.init();
         MagicMirror.xkcd.init();
         MagicMirror.onoff.init();
+        MagicMirror.voicecontrol.init();
 
-        //TODO Do these get registered by voicecontrol?
         /*
          MagicMirror.giphy.init();
          MagicMirror.kittens.init();
          MagicMirror.youtube.init();
          MagicMirror.google.init();
          */
-        MagicMirror.voicecontrol.init();
+
         //MagicMirror.voicecontrol.addCommand("(*noise) show map (*noise)", MagicMirror.geolocate.toggle);
         //MagicMirror.voicecontrol.addCommand("go to sleep (*noise)", MagicMirror.onoff.sleep);
         //MagicMirror.voicecontrol.addCommand("wake up (*noise)", MagicMirror.onoff.awaken);

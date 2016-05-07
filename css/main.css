@@ -82,11 +82,17 @@ p.info {
   bottom: 120px;
 }
 
+.xxxsmall,
 .xxsmall,
 .xsmall,
 .small {
 	font-family: "HelveticaNeue-Medium", sans-serif;
 	letter-spacing: 0;
+}
+
+
+.xxxsmall {
+  font-size: 10px;
 }
 
 .xxsmall {

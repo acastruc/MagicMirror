@@ -21,7 +21,7 @@
         fetchNewsIntervalId: null,
 
         init: function () {
-            MagicMirror.logger.info("Reading data from:" + this.feed);
+            MagicMirror.logger.info("Reading rss data from " + this.feed);
 
             this.fetchNews();
             this.intervalId = setInterval(function () {
@@ -55,7 +55,6 @@
         var rss_url = document.location.protocol
                     + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q='
                     + encodeURIComponent(url);
-        MagicMirror.logger.info(rss_url);
 
         $.ajax({
             url: rss_url,
@@ -67,7 +66,9 @@
                     callback([{title: 'Study shows reading headlines makes you smarter'},
                               {title: 'Local sports team competes against visiting team; good time had by all'}]);
                 }
-
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                MagicMirror.logger.error("Failed to fetch rss data: " + jqXHR.status + " " + textStatus + " " + errorThrown);
             }
         });
     }
