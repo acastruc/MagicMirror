@@ -29,8 +29,10 @@
         },
 
         toDebug: function(s, type) {
+            var now = new Date();
+            var logTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString() + ' ';
             type = type || 'info';
-            lines.push({text: s.toString(), type: type});
+            lines.push({text: logTime + s.toString(), type: type});
             if(lines.length > MAX_LINES) {
                 lines.shift();
             }
@@ -38,6 +40,7 @@
             for(var i=0; i<lines.length; i++) {
                 msg += '<p class="' + lines[i].type +'">' + lines[i].text + '</p>';
             }
+            $('#dbg-log').empty();
             $('#dbg-log').html(msg);
         }
     };

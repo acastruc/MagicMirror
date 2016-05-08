@@ -68,33 +68,10 @@
 
                     $(this.temperatureLocation).updateWithText(_newTempHtml, this.fadeInterval);
 
-                    /* This used to update current sunrise etc. I could personally care less when the sun rose.
-                    var _now = moment().format('HH:mm'),
-                        _sunrise = moment(data.sys.sunrise*1000).format('HH:mm'),
-                        _sunset = moment(data.sys.sunset*1000).format('HH:mm');
-
-                    var _newWindHtml = '<span class="wind"><span class="wi wi-strong-wind xdimmed"></span> ' + ms2Beaufort(_wind) + '</span>',
-                        _newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '</span>';
-
-                    if (_sunrise < _now && _sunset > _now) {
-                        _newSunHtml = '<span class="sun"><span class="wi wi-sunset xdimmed"></span> ' + _sunset + '</span>';
-                    }
-
-                    $(this.windSunLocation).updateWithText(_newWindHtml + ' ' + _newSunHtml,this.fadeInterval);
-                    */
                 }.bind(this),
                 error: function () {
-                    //The REST call failed. Fake it with some data
-                    MagicMirror.logger.info('Current weather conditions could not be found.');
-                    var _temperature = "-7.0",
-                        _temperatureMin = "-15.0",
-                        _temperatureMax = "0.0",
-                        _wind = "0",
-                        _iconClass = "wi-day-sunny";
-
-                    var _icon = '<span class="icon ' + _iconClass + ' dimmed wi"></span>';
-                    var _newTempHtml = _icon + '' + _temperature + '&deg;';
-                    $(this.temperatureLocation).updateWithText(_newTempHtml, this.fadeInterval);
+                    //The REST call failed.
+                    MagicMirror.logger.error('Failed to fetch current weather conditions');
                 }.bind(this)
             });
 
@@ -152,7 +129,7 @@
 
                 }.bind(this),
                 error: function () {
-
+                    MagicMirror.logger.error('Failed to fetch forecast weather conditions');
                 }
             });
         },

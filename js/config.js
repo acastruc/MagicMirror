@@ -16,7 +16,7 @@
             startListeningOnLoad: false
         },
         debug: {
-            showLogging: false
+            showLogging: true
         },
         spirit: {
             //url: 'http://www.dionlabel.com/tl_files/Blog_Photos/Magic_Mirror_SnowWhite.jpg',
@@ -26,7 +26,7 @@
             fadeInterval: 2000
         },
         weather: {
-            interval: 60000, //60s between updates
+            interval: 60000*5, //5 minutes between updates
             params: {
                 q: 'Ottawa, Canada',
                 units: 'metric',
