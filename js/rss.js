@@ -18,6 +18,7 @@
         updateInterval: config.news.updateInterval || 6000,
         fadeInterval: 3000,
         intervalId: null,
+        fetchId: null,
         fetchNewsIntervalId: null,
 
         init: function () {
@@ -27,12 +28,18 @@
             this.intervalId = setInterval(function () {
                 this.showNews();
             }.bind(this), this.updateInterval);
+
+            this.fetchId = setInterval(function () {
+                MagicMirror.logger.info('Fetching fresh news data from rss feed');
+                this.currentItem = 0;
+                this.fetchNews();
+                this.showNews();
+            }.bind(this), this.fetchInterval);
         },
 
         fetchNews: function () {
             parseRSS(this.feed, function (data) {
                 MagicMirror.logger.info("Received rss data");
-                MagicMirror.logger.info(data);
                 this.currentItem = 0;
                 this.newsItems = data.entries;
             }.bind(this));
@@ -43,8 +50,8 @@
             if(this.currentItem < this.newsItems.length) {
                 item = this.newsItems[this.currentItem].title;
                 this.currentItem = (this.currentItem+1) % this.newsItems.length;
+                $(this.newsLocation).updateWithText('Breaking News: ' + item, this.fadeInterval);
             }
-            $(this.newsLocation).updateWithText('Breaking News: ' + item, this.fadeInterval);
         },
         toggle: function () {
             $(this.newsLocation).toggle();

@@ -4,7 +4,7 @@
 (function ($, MagicMirror) {
 
     $(document).ready(function () {
-        MagicMirror.logger.info('Initializing MagicMirror interface...');
+        MagicMirror.logger.info('Initializing MagicMirror interface v' + MagicMirror.config.version);
 
         MagicMirror.debug.init();
         MagicMirror.geolocate.init();

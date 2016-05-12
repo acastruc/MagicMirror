@@ -30,7 +30,7 @@
 
         toDebug: function(s, type) {
             var now = new Date();
-            var logTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString() + ' ';
+            var logTime = now.toLocaleDateString("en-US") + ' ' + now.toLocaleTimeString() + ' ';
             type = type || 'info';
             lines.push({text: logTime + s.toString(), type: type});
             if(lines.length > MAX_LINES) {

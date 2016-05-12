@@ -144,6 +144,7 @@
             }
 
             this.intervalId = setInterval(function () {
+                MagicMirror.logger.info('Updating weather and forecast information');
                 this.updateCurrentConditions();
                 this.updateForecast();
             }.bind(this), this.updateInterval);
