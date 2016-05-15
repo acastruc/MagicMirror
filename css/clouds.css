@@ -18,6 +18,7 @@ body {
 }
 
 .sky {
+    zoom: 10%;
     opacity: 0.5;
     z-index: 0;
     height: 280px;
@@ -27,9 +28,6 @@ body {
     -webkit-animation: sky_background 50s ease-out infinite;
     -moz-animation: sky_background 50s ease-out infinite;
     -o-animation: sky_background 50s ease-out infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0)
 }
 
 .moon {
@@ -41,9 +39,7 @@ body {
     -webkit-animation: moon 50s linear infinite;
     -moz-animation: moon 50s linear infinite;
     -o-animation: moon 50s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0)
+
 }
 
 .clouds_one {
@@ -56,9 +52,7 @@ body {
     -webkit-animation: cloud_one 50s linear infinite;
     -moz-animation: cloud_one 50s linear infinite;
     -o-animation: cloud_one 50s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0)
+
 }
 
 .clouds_two {
@@ -71,9 +65,7 @@ body {
     -webkit-animation: cloud_two 75s linear infinite;
     -moz-animation: cloud_two 75s linear infinite;
     -o-animation: cloud_two 75s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0)
+
 }
 
 .clouds_three {
@@ -86,9 +78,7 @@ body {
     -webkit-animation: cloud_three 100s linear infinite;
     -moz-animation: cloud_three 100s linear infinite;
     -o-animation: cloud_three 100s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0)
+    
 }
 
 @-webkit-keyframes sky_background {
