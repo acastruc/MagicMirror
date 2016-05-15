@@ -38,6 +38,11 @@ p.info {
   left: 35px;
 }
 
+.ui-layer {
+   z-index: 999;
+}
+
+
 .right {
   position: absolute;
   right: 35px;

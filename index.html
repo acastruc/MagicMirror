@@ -3,25 +3,25 @@
     <title>Adam's Magic Mirror Knockoff</title>
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/clouds.css">
     <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 
 <body>
-    <div class="top right">
-        <!-- <div class="windsun small dimmed"></div> I dont care for this -->
+    <div class="top right ui-layer">
         <div class="temp"></div>
         <div class="forecast small dimmed"></div>
     </div>
 
     <!-- date+time -->
-    <div class="top left">
+    <div class="top left ui-layer">
         <div class="date small dimmed"></div>
         <div class="time" id="time"></div>
         <div class="calendar xxsmall"></div> <!-- todo show calendar items -->
     </div>
 
-    <div class="center-ver center-hor">
+    <div class="center-ver center-hor ui-layer">
         <img id="xkcd-img" >
         <img id="map" class="map"
              src="https://maps.googleapis.com/maps/api/staticmap?center=45.273082599999995,-75.849912&amp;zoom=13&amp;format=png&amp;sensor=false&amp;scale=2&amp;size=1422x1200&amp;maptype=roadmap&amp;style=visibility:on|weight:1|invert_lightness:true|saturation:-100|lightness:1">
@@ -31,16 +31,25 @@
         </div>
     </div>
 
-    <div class="lower-third center-hor">
+    <div class="lower-third center-hor ui-layer">
         <div class="compliment light"></div>
     </div>
 
-    <div class="bottom center-hor">
+    <div class="bottom center-hor ui-layer">
         <div class="news medium-small"></div>
     </div>
 
     <div class="debug-log bottom">
         <div id="dbg-log" class="xxxsmall"></div>
+    </div>
+
+    <div class="overlay">
+        <div class="sky">
+            <div class="moon"></div>
+            <div class="clouds_one"></div>
+            <div class="clouds_two"></div>
+            <div class="clouds_three"></div>
+        </div>
     </div>
 
 
@@ -59,6 +68,7 @@
     <script src="js/mirrorspirit.js"></script>
     <script src="js/smalltalk.js"></script>
     <script src="js/xkcd.js"></script>
+    <script src="js/clouds.js"></script>
     <script src="js/voicecontrol.js"></script>
 
     <script src="js/main.js"></script>

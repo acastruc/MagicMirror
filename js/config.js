@@ -6,7 +6,7 @@
 
     var config = {
         lang: 'en',
-        version: 1.01,
+        version: 1.02,
         fadeInterval: 1000,
         time: {
             timeFormat: 12,

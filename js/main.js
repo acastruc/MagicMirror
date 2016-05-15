@@ -3,6 +3,10 @@
  */
 (function ($, MagicMirror) {
 
+    window.onerror = function (errorMsg, url, lineNumber) {
+        MagicMirror.logger.error(errorMsg + ' ' +  url + ' ' + lineNumber);
+    };
+
     $(document).ready(function () {
         MagicMirror.logger.info('Initializing MagicMirror interface v' + MagicMirror.config.version);
 
@@ -14,6 +18,7 @@
         MagicMirror.smalltalk.init();
         MagicMirror.mirrorspirit.init();
         MagicMirror.xkcd.init();
+        MagicMirror.clouds.init();
         MagicMirror.onoff.init();
         MagicMirror.voicecontrol.init();
 
@@ -37,6 +42,7 @@
         MagicMirror.voicecontrol.addCommand("mirror mirror on the wall", MagicMirror.mirrorspirit.toggle);
         MagicMirror.voicecontrol.addCommand("xkcd", MagicMirror.xkcd.toggle);
         MagicMirror.voicecontrol.addCommand("(go) home", MagicMirror.home);
+        MagicMirror.voicecontrol.addCommand("clouds", MagicMirror.clouds.toggle)
         MagicMirror.voicecontrol.addCommand("test", MagicMirror.home);
     });
 
