@@ -11,13 +11,13 @@
         time: {
             timeFormat: 12,
             displaySeconds: true,
-            digitFade: false,
+            digitFade: false
         },
         voicecontrol: {
             startListeningOnLoad: false
         },
         debug: {
-            showLogging: true
+            showLogging: false
         },
         spirit: {
             //url: 'http://www.dionlabel.com/tl_files/Blog_Photos/Magic_Mirror_SnowWhite.jpg',
