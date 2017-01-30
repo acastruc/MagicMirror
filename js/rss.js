@@ -50,7 +50,7 @@
             if(this.currentItem < this.newsItems.length) {
                 item = this.newsItems[this.currentItem].title;
                 this.currentItem = (this.currentItem+1) % this.newsItems.length;
-                $(this.newsLocation).updateWithText('Breaking News: ' + item, this.fadeInterval);
+                $(this.newsLocation).updateWithText(item, this.fadeInterval);
             }
         },
         toggle: function () {
@@ -59,26 +59,39 @@
     };
 
     function parseRSS(url, callback) {
-        var rss_url = document.location.protocol
-                    + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q='
-                    + encodeURIComponent(url);
-
-        $.ajax({
-            url: rss_url,
-            dataType: 'json',
-            success: function(data) {
-                if (data.responseData && data.responseData.feed) {
-                    callback(data.responseData.feed);
-                } else {
-                    callback([{title: 'Study shows reading headlines makes you smarter'},
-                              {title: 'Local sports team competes against visiting team; good time had by all'}]);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                MagicMirror.logger.error("Failed to fetch rss data: " + jqXHR.status + " " + textStatus + " " + errorThrown);
-            }
-        });
-    }
+                    MagicMirror.logger.error("Failed to fetch rss data: API returning unknown format");
+                    var data = {
+                        entries: [
+                            {title: 'Study shows reading headlines makes you smarter'},
+                            {title: 'Local sports team competes against visiting team; good time had by all'},
+                            {title: 'Please tell Adam to work on the rss feed code'},
+                            {title: 'Mirror on the wall says YOU are the prettiest one of all'},
+                            {title: 'Lets start calling donuts "sugar free bagels" as to feel less guilty when eating them'},
+                            {title: 'See a penny pick it up'},
+                            {title: 'Please remember to wash your hands :)'},
+                            {title: 'Always never give up'},
+                            {title: 'Believe in yourself'},
+                            {title: 'Life\'s a journey'},
+                            {title: 'You look great today!'},
+                            {title: 'Together we can rid the world of AYS in our lifetime. Please give generously'},
+                            {title: 'Smi)e'},
+                            {title: 'Contrary to popular belief, bologna is not made from giraffe\'s neck'},
+                            {title: 'Life is a journey, not a race'},
+                            {title: 'Paladium Iladium'},
+                            {title: 'Don\'t go chasing waterfalls'},
+                            {title: 'You should really think about adding more fibre to your diet'},
+                            {title: '4 out of 5 guests agree, this bathroom is awesome'},
+                            {title: 'Walking in the forest I found a log. Underneath it I found a stick. I thought to myself: \'that log had a baby\''},
+                            {title: '\'I wanna crap a rocket\' - Ethan Castrucci 2006'},
+                            {title: 'Whatever you do, don\'t cross the streams!'},
+                            {title: 'May the force be with you'},
+                            {title: '\'Do or do not. There is no try\' - Yoda'},
+                            {title: '\'I bent my wookie!\' - Ralph Wiggum'},
+                            {title: 'Mandlebaum! Mandlebaum! Mandlebaum!'}
+                        ]
+                    };
+                    callback(data);
+    };
 
     MagicMirror.rss = rss;
 
