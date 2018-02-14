@@ -11,15 +11,15 @@
         MagicMirror.logger.info('Initializing MagicMirror interface v' + MagicMirror.config.version);
 
         MagicMirror.debug.init();
-        MagicMirror.geolocate.init();
+        //MagicMirror.geolocate.init();
         MagicMirror.time.init();
         MagicMirror.weather.init();
         MagicMirror.rss.init();
-        MagicMirror.smalltalk.init();
-        MagicMirror.mirrorspirit.init();
-        MagicMirror.xkcd.init();
+        //MagicMirror.smalltalk.init();
+        //MagicMirror.mirrorspirit.init();
+        //MagicMirror.xkcd.init();
         MagicMirror.onoff.init();
-        MagicMirror.voicecontrol.init();
+        //MagicMirror.voicecontrol.init();
 
         /*
          MagicMirror.giphy.init();
@@ -35,13 +35,13 @@
         //MagicMirror.voicecontrol.addCommand("(*noise) xkcd (*noise)", MagicMirror.xkcd.toggle);
         //MagicMirror.voicecontrol.addCommand("(*noise) (go) home (*noise)", MagicMirror.home);
         //MagicMirror.voicecontrol.addCommand("test", MagicMirror.home);
-        MagicMirror.voicecontrol.addCommand("show map", MagicMirror.geolocate.toggle);
-        MagicMirror.voicecontrol.addCommand("go to sleep", MagicMirror.onoff.sleep);
-        MagicMirror.voicecontrol.addCommand("wake up", MagicMirror.onoff.awaken);
-        MagicMirror.voicecontrol.addCommand("mirror mirror on the wall", MagicMirror.mirrorspirit.toggle);
-        MagicMirror.voicecontrol.addCommand("xkcd", MagicMirror.xkcd.toggle);
-        MagicMirror.voicecontrol.addCommand("(go) home", MagicMirror.home);
-        MagicMirror.voicecontrol.addCommand("test", MagicMirror.home);
+        //MagicMirror.voicecontrol.addCommand("show map", MagicMirror.geolocate.toggle);
+        //MagicMirror.voicecontrol.addCommand("go to sleep", MagicMirror.onoff.sleep);
+        //MagicMirror.voicecontrol.addCommand("wake up", MagicMirror.onoff.awaken);
+        //MagicMirror.voicecontrol.addCommand("mirror mirror on the wall", MagicMirror.mirrorspirit.toggle);
+        //MagicMirror.voicecontrol.addCommand("xkcd", MagicMirror.xkcd.toggle);
+        //MagicMirror.voicecontrol.addCommand("(go) home", MagicMirror.home);
+        //MagicMirror.voicecontrol.addCommand("test", MagicMirror.home);
     });
 
     jQuery.fn.updateWithText = function(text, speed)
